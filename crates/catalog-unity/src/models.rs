@@ -311,6 +311,8 @@ pub enum TableType {
     View,
     MaterializedView,
     StreamingTable,
+    #[serde(other)] // ← catches FOREIGN, FEATURE_SPEC, MANAGED_SHALLOW_CLONE, etc.
+    Unknown,
 }
 
 #[derive(Deserialize, Debug)]
